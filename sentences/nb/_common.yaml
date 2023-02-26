@@ -98,6 +98,12 @@ lists:
         out: shutter
       - in: <vindu>
         out: window
+  lock_states:
+    values:
+      - in: låst
+        out: locked
+      - in: ulåst
+        out: unlocked
 expansion_rules:
   navn: "{name}[(en|et|n[s])]"
   område: "{area}[(n[s]|en|et[s]|met[s])]"
@@ -105,7 +111,7 @@ expansion_rules:
   #determinatives
   alle: "(alle|alt|samtlige)"
   i_på: "(i|på|ved [siden av])"
-  hva: "(hva er|hva er det|hvilken|hvilke)"
+  hva: "(hva[ er][ det]|hvilke[n])"
 
   #states
   temperatur: "{temperature}[°| grader] [{temperature_unit}]"
@@ -118,15 +124,16 @@ expansion_rules:
   endre: "(endre|sett|juster|skru (opp|ned)|vri|dimm[e]|still [inn]|øk|senk|dim[me])"
   skru_av: "(skru av|slukk|slå av|slukk|steng [av]|stopp)"
   skru_på: "(skru på|tenn|sett[e] (på|igang|fart på)|slå på|start[e])"
-  åpne: "åpne [opp]|heis [opp]|lukk opp|rull opp"
-  lukk: "lukk [igjen]|heis [ned]|rull [ned]|steng|senk"
-  åpen: "åpen|åpnet [opp]|rullet opp|lukket opp"
-  lukket: "lukket [igjen]|stengt|senket|rullet ned"
+  åpne: "(åpne [opp]|heis [opp]|lukk opp|rull opp)"
+  lukk: "(lukk [igjen]|heis [ned]|rull [ned]|steng|senk)"
+  åpen: "(åpen|åpnet [opp]|rullet opp|lukket opp)"
+  lukket: "(lukket [igjen]|stengt|senket|rullet ned)"
+  aktiver: "aktiver|utfør"
 
   #entities
   lys: "(lys[(ene|et)]|lyskilde[r|n|ene]|[gløde|led|diode]lamp[e|en|er|ene]|lysrør[et|ene]|belysning[en])"
   bryter: "(bryter[(e|[e]n[e])]|uttak[ene]|kontakt[(er|en[e])])"
-  vifte: "vifte[(r|n[e])]"
+  vifte: "(vifte[(r|n[e])])"
 
   #covers
   vindu: "[tak]vindu[et|er|ene]|[tak]luke[en|er|ene]"
@@ -136,7 +143,7 @@ expansion_rules:
   rullegardin: "(rullegardin|foldegardin|plissegardin)[(et|er|ene)]"
   skodde: "[rulle]skodde[(n|r|ene)]|solskjerm[(en|er|ene)]"
   markise: "markise[(r|n[e])]"
-  dør: "[inngangs|ytter]dør[(a|er|en[e])]"
+  dør: "dør[(a|er|en[e])]"
   port: "[hage]port[(er|en[e])]"
 
 skip_words:
